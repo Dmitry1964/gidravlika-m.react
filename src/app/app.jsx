@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <section id="center">
-        <h2>jxjcjxcjxcjx jsjdsjdjsdjsdjsd</h2>
+        <h2 className="container">jxjcjxcjxcjx jsjdsjdjsdjsdjsd</h2>
       </section>
 
       <div className="ticks">11111111111111111111111111</div>
