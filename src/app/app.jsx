@@ -1,21 +1,29 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { AppRoutes } from "@/app/routes/app-routes";
+import {Suspense} from "react";
+import Layout from '@/pages/layout/layout';
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: AppRoutes.Main,
+      element: (
+        <>
+          <Layout/>
+          {/* <ScrolTop/> */}
+        </>
+      ),
+      children: [
+
+      ]
+    }
+  ]);
 
   return (
-    <>
-      <section id="center">
-        <h2 className="container">jxjcjxcjxcjx jsjdsjdjsdjsdjsd</h2>
-      </section>
-
-      <div className="ticks">11111111111111111111111111</div>
-
-      <section id="next-steps">
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+    <Suspense fallback={<div>Loading...</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }
 
-export default App
+export default App;
